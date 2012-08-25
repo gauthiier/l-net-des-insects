@@ -1,0 +1,9 @@
+CFO Music and MIDI library
+
+Work in progress
+
+Copy whole CFO folder to your "libraries" folder in your Arduino sketch folder.
+
+See example code in examples folder for utilizing the library.
+
+I am not 100% everything will work with the insects yet, but we'll see soon enough.
