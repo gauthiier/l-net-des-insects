@@ -7,3 +7,11 @@ Copy whole CFO folder to your "libraries" folder in your Arduino sketch folder.
 See example code in examples folder for utilizing the library.
 
 I am not 100% everything will work with the insects yet, but we'll see soon enough.
+
+//synth parameters as MIDI controller numbers
+ENV_ATTACK 4
+ENV_DECAY 5
+ENV_SUSTAIN 6
+ENV_RELEASE 7
+DETUNE 12
+WAVEFORM 13
