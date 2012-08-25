@@ -1,9 +1,15 @@
-CFO Music and MIDI library
+Libraries and sketches for using and running the CFO synth and MIDI library for Arduino.
 
 Work in progress
 
-Copy whole CFO folder to your "libraries" folder in your Arduino sketch folder.
+From the Arduino folder here, copy whole CFO folder to your "libraries" folder in your Arduino sketch folder.
+(on Mac it's typically ~/Documents/Arduino/Libraries/)
 
-See example code in examples folder for utilizing the library.
+See example code in the Arduino/examples folder for utilizing the library.
+
+In order to use MIDI you should use the IACMidi2Serial sketch in the processing folder (To get this to run you need to install Ruin & Wesen's MIDI library for processing. Look for RWMidi here: http://ruinwesen.com/files).
+
+Once the sketch is running you should be able to send note and controller messages from your DAW of choice to the IAC MIDI driver. The IACMidi2Serial sketch only listens to port 1 (the first instance of the IAC driver) but you can modify that in the sketch yourself.
+The sketch then sends that MIDI data (slightly formatted) to the serial port which the (mini)CFO will read and act upon :)
 
 I am not 100% everything will work with the insects yet, but we'll see soon enough.
