@@ -49,7 +49,7 @@ void MMidi::checkMidi()
 	while(Serial.available() > 0) {
 
 		data = Serial.read();
-		if(data > 127) {		// bitmask with 10000000 to see if byte is over 127 | data & 0x80
+		if(data & 0x80) {		// bitmask with 10000000 to see if byte is over 127 | data & 0x80
 			midiBufferIndex = 0;
 		}
 		midiBuffer[midiBufferIndex] = data;
