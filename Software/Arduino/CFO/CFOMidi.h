@@ -50,7 +50,10 @@ public:
 
 private:	
 	// MIDI
-	uint16_t midiBuffer[4];
+	uint8_t data;
+	//uint16_t midiBuffer[4];
+	uint8_t midiBuffer[16];
+	
 	int midiBufferIndex;
 	uint16_t frequency;
 	//uint32_t midiTime;

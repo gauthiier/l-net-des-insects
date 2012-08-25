@@ -110,8 +110,8 @@ void sendNoteOn(byte channel, byte pitch, byte velocity) {
   port0.write(noteOn);
   port0.write(pitch);
   port0.write(velocity);
-  port0.write(endMessage);
-  println('\n' + hex(noteOn) + " " + hex(pitch) + " " + hex(velocity) + " " + hex(endMessage));
+  //port0.write(endMessage);
+  println('\n' + hex(noteOn) + " " + hex(pitch) + " " + hex(velocity));
 
 }
 
@@ -123,8 +123,8 @@ void sendNoteOff(byte channel, byte pitch, byte velocity) {
   port0.write(noteOff);
   port0.write(pitch);
   port0.write(velocity);
-  port0.write(endMessage);
-  println('\n' + hex(noteOff) + " " + hex(pitch) + " " + hex(velocity) + " " + hex(endMessage));
+  //port0.write(endMessage);
+  println('\n' + hex(noteOff) + " " + hex(pitch) + " " + hex(velocity));
 
 }
 
@@ -136,7 +136,7 @@ void sendControlChange(byte channel, byte CC, byte value) {
   port0.write(controlChange);
   port0.write(CC);
   port0.write(value);
-  port0.write(endMessage);
-  println('\n' + hex(controlChange) + " " + hex(CC) + " " + hex(value) + " " + hex(endMessage));
+  //port0.write(endMessage);
+  println('\n' + hex(controlChange) + " " + hex(CC) + " " + hex(value));
   
 }   

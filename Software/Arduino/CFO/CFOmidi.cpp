@@ -47,14 +47,25 @@ void MMidi::init()
 void MMidi::checkMidi()
 {
 	while(Serial.available() > 0) {
+
+		data = Serial.read();
+		if(data > 127) {		// bitmask with 10000000 to see if byte is over 127 | data & 0x80
+			midiBufferIndex = 0;
+		}
+		midiBuffer[midiBufferIndex] = data;
+		midiBufferIndex++;
+		if (midiBufferIndex > 2) {
+			midiHandler();
+		}
 		
+/*
 		midiBuffer[midiBufferIndex] = Serial.read();
 		if(midiBuffer[midiBufferIndex] == 0xFF) {
 			midiHandler();
 			midiBufferIndex = 0;
 		}    
 		else midiBufferIndex++;
-		
+*/		
 	}
 	
 }
