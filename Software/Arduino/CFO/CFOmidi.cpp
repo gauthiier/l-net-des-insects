@@ -28,15 +28,22 @@
 #include <CFOMusic.h>
 #include <CFOMidi.h>
 
+#ifndef CFO_MIDI_CHANNEL
+#define CFO_MIDI_CHANNEL 1
+#endif
+
 prog_uint16_t hertzTable[] PROGMEM = {8,8,9,9,10,10,11,12,12,13,14,15,16,17,18,19,20,21,23,24,25,27,29,30,32,34,36,38,41,43,46,48,51,54,58,61,65,69,73,77,82,87,92,97,103,109,116,123,130,138,146,155,164,174,184,195,207,219,233,246,261,277,293,311,329,349,369,391,415,440,466,493,523,554,587,622,659,698,739,783,830,880,932,987,1046,1108,1174,1244,1318,1396,1479,1567,1661,1760,1864,1975,2093,2217,2349,2489,2637,2793,2959,3135,3322,3520,3729,3951,4186,4434,4698,4978,5274,5587,5919,6271,6644,7040,7458,7902,8372,8869,9397,9956,10548,11175,11839,12543};
 
 MMidi Midi;
+
+bool midiRead = false;
 
 void MMidi::init()
 {	
 	Serial.begin(115200);
 
 	midiBufferIndex = 0;
+	midiChannel = 0;
 	//notePlayed = 0;
 
 	
@@ -49,15 +56,21 @@ void MMidi::checkMidi()
 	while(Serial.available() > 0) {
 
 		data = Serial.read();
-		if(data & 0x80) {		// bitmask with 10000000 to see if byte is over 127 | data & 0x80
+		//if((data & 0x0F) == CFO_MIDI_CHANNEL) {
+
+		if(data & 0x80 && (data & 0x0F) == midiChannel) {		// bitmask with 10000000 to see if byte is over 127 | data & 0x80
 			midiBufferIndex = 0;
+			midiRead = true;
+		} else if(data &0x80) {
+			midiRead = false;
 		}
-		midiBuffer[midiBufferIndex] = data;
-		midiBufferIndex++;
-		if (midiBufferIndex > 2) {
-			midiHandler();
+		if(midiRead) {
+			midiBuffer[midiBufferIndex] = data;
+			midiBufferIndex++;
+			if (midiBufferIndex > 2) {
+				midiHandler();
+			}
 		}
-		
 /*
 		midiBuffer[midiBufferIndex] = Serial.read();
 		if(midiBuffer[midiBufferIndex] == 0xFF) {
@@ -68,6 +81,12 @@ void MMidi::checkMidi()
 */		
 	}
 	
+}
+
+void MMidi::setChannel(uint8_t channel) {
+	if(0 < channel <= 16) {
+		midiChannel = channel-1;
+	}
 }
 
 

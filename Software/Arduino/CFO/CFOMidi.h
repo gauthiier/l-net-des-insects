@@ -45,6 +45,7 @@ public:
 	void programChange(uint8_t channel, uint8_t number);
 	void channelPressure(uint8_t channel, uint8_t pressure);
 	void pitchWheel(uint8_t channel, uint8_t highBits, uint8_t lowBits);
+	void setChannel(uint8_t);
 
 
 
@@ -53,6 +54,7 @@ private:
 	uint8_t data;
 	//uint16_t midiBuffer[4];
 	uint8_t midiBuffer[16];
+	uint8_t midiChannel;
 	
 	int midiBufferIndex;
 	uint16_t frequency;
