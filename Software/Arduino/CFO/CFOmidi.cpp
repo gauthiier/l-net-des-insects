@@ -83,10 +83,16 @@ void MMidi::checkMidi()
 	
 }
 
-void MMidi::setChannel(uint8_t channel) {
-	if(0 < channel <= 16) {
-		midiChannel = channel-1;
+void MMidi::setChannel(uint8_t ID, uint8_t channel) {
+	if(ID == cfoID) {
+		if(1 <= channel <= 16) {
+			midiChannel = channel-1;
+		}
 	}
+}
+
+void MMidi::setID(uint8_t ID) {
+	cfoID = ID;
 }
 
 
@@ -136,12 +142,53 @@ void MMidi::midiHandler() {
 							 midiBuffer[1] & 0x7F, // higher bits 0-6
 							 midiBuffer[2] & 0x7F);// lower bits 7-13
 			break;
+        case 0xF0:
+			sysex			(midiBuffer[0] & 0x0F,	// midi channel 0-16
+							 midiBuffer[1] & 0x7F,	// higher bits 0-6
+							 midiBuffer[2] & 0x7F,	// lower bits 7-13
+							 midiBuffer[3] & 0x7F,	// higher bits 0-6
+							 midiBuffer[4] & 0x7F,	// lower bits 7-13
+							 midiBuffer[5] & 0x7F,	// higher bits 0-6
+							 midiBuffer[6] & 0x7F,	// lower bits 7-13
+							 midiBuffer[7] & 0x7F,	// higher bits 0-6
+							 midiBuffer[8] & 0x7F,	// lower bits 7-13
+							 midiBuffer[9] & 0x7F,	// higher bits 0-6
+							 midiBuffer[10] & 0x7F,	// lower bits 7-13
+							 midiBuffer[11] & 0x7F, // higher bits 0-6
+							 midiBuffer[12] & 0x7F,	// lower bits 7-13
+							 midiBuffer[13] & 0x7F, // higher bits 0-6
+							 midiBuffer[14] & 0x7F,	// lower bits 7-13
+							 midiBuffer[15] & 0x7F);// higher bits 0-6
+			break;
 			
         default:
 			break;
 	}
 }
 
+void MMidi::sysex(uint8_t val0,
+				  uint8_t val1,
+				  uint8_t val2,
+				  uint8_t val3,
+				  uint8_t val4,
+				  uint8_t val5,
+				  uint8_t val6,
+				  uint8_t val7,
+				  uint8_t val8,
+				  uint8_t val9,
+				  uint8_t valA,
+				  uint8_t valB,
+				  uint8_t valC,
+				  uint8_t valD,
+				  uint8_t valE,
+				  uint8_t valF)
+	{
+	
+		//ADD SYSEX HANDLING HERE
+	
+}
+
+	
 
 void MMidi::noteOff(uint8_t channel, uint8_t note, uint8_t vel) {
 	

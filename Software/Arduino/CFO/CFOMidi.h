@@ -37,6 +37,9 @@ class MMidi {
 public:
 	void init();
 	void checkMidi();
+	void setChannel(uint8_t ID, uint8_t channel);
+	void setID(uint8_t ID);
+
 	void midiHandler();
 	void noteOff(uint8_t channel, uint8_t note, uint8_t vel);
 	void noteOn(uint8_t channel, uint8_t note, uint8_t vel);
@@ -45,11 +48,28 @@ public:
 	void programChange(uint8_t channel, uint8_t number);
 	void channelPressure(uint8_t channel, uint8_t pressure);
 	void pitchWheel(uint8_t channel, uint8_t highBits, uint8_t lowBits);
-	void setChannel(uint8_t);
+	void sysex	(uint8_t,
+				 uint8_t,
+				 uint8_t,
+				 uint8_t,
+				 uint8_t,
+				 uint8_t,
+				 uint8_t,
+				 uint8_t,
+				 uint8_t,
+				 uint8_t,
+				 uint8_t,
+				 uint8_t,
+				 uint8_t,
+				 uint8_t,
+				 uint8_t,
+				 uint8_t);
 
 
-
-private:	
+private:
+	// ID
+	uint8_t cfoID;
+	
 	// MIDI
 	uint8_t data;
 	//uint16_t midiBuffer[4];

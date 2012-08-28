@@ -1,4 +1,4 @@
-//#define CFO_MIDI_CHANNEL 4
+#define CFO_ID 0
 
 #include <stdint.h>
 #include <CFOMidi.h>
@@ -8,17 +8,18 @@
 void setup() {
   
   Music.init();  
-  Midi.init();
-  Midi.setChannel(16); // channel number is 1-16
+  //Midi.init();
+  //Midi.setID(CFO_ID);
+  //Midi.setChannel(CFO_ID, 1); // channel number is 1-16
   Music.setSaw();
-  Music.setDetune(0.02);
-  Music.enableEnvelope();
+  //Music.setDetune(0.02);
+  //Music.enableEnvelope();
   
 }
 
 void loop() {
   
-  Midi.checkMidi();
+  //Midi.checkMidi();
   
 }
 
