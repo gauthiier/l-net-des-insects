@@ -8,10 +8,29 @@ See example code in examples folder for utilizing the library.
 
 I am not 100% everything will work with the insects yet, but we'll see soon enough.
 
-//synth parameters as MIDI controller numbers
-ENV_ATTACK 4
-ENV_DECAY 5
-ENV_SUSTAIN 6
-ENV_RELEASE 7
-DETUNE 12
-WAVEFORM 13
+Synth parameters as MIDI controller numbers
+// Settings that apply to all oscillators
+DETUNE 4
+WAVEFORM 5
+
+// Envelope settings
+ENV_ATTACK 114
+ENV_DECAY 115
+ENV_SUSTAIN 116
+ENV_RELEASE 117
+
+// Settings for oscillator 1
+SEMITONE1 11
+DETUNE1 12
+GAIN1 13
+
+// Settings for oscillator 2
+SEMITONE2 21
+DETUNE2 22
+GAIN2 23
+
+// Settings for oscillator 3
+SEMITONE3 31
+DETUNE3 32
+GAIN3 33
+
