@@ -1,0 +1,79 @@
+Partlist
+
+Exported from noch10.rev2.sch at 8/31/12 4:05 PM
+
+EAGLE Version 6.1.0 Copyright (c) 1988-2012 CadSoft
+
+Assembly variant: 
+
+Part     Value              Device             Package      Library        Sheet
+
+A0       MCS10B             MCS10B             MCS10B       solpad         1
+A1       MCS10B             MCS10B             MCS10B       solpad         1
+A2       MCS10B             MCS10B             MCS10B       solpad         1
+A3       MCS10B             MCS10B             MCS10B       solpad         1
+A4       MCS10B             MCS10B             MCS10B       solpad         1
+AIN      PG203J             PG203J             PG203J       con-hirschmann 1
+AMP      LM380N-8           LM380N-8           DIL08        dviiid         1
+AOUT     PG203J             PG203J             PG203J       con-hirschmann 1
+C1       100nF              C-US025-025X050    C025-025X050 rcl            1
+C2       100nF              C-US025-025X050    C025-025X050 rcl            1
+C3       4.7uF              CPOL-USE2.5-5      E2,5-5       rcl            1
+C4       220uF              CPOL-USE2.5-6      E2,5-6       rcl            1
+C5       10uF               CPOL-USE2.5-5      E2,5-5       rcl            1
+C6       0.33uF             C-US025-025X050    C025-025X050 rcl            1
+C7       18pF               C-US025-025X050    C025-025X050 rcl            1
+C8       18pF               C-US025-025X050    C025-025X050 rcl            1
+C9       100nF              C-US025-025X050    C025-025X050 rcl            1
+C10      100nF              C-US025-025X050    C025-025X050 rcl            1
+C11      100nF              C-US025-025X050    C025-025X050 rcl            1
+C12      100nF              C-US025-025X050    C025-025X050 rcl            1
+C13      220uF              CPOL-USE2.5-6      E2,5-6       rcl            1
+C14      220uF              CPOL-USE2.5-6      E2,5-6       rcl            1
+C15      100nF              C-US025-025X050    C025-025X050 rcl            1
+C16      220uF              CPOL-USE2.5-6      E2,5-6       rcl            1
+D1       15KEXX             15KEXX             CB429-17     diode          1
+DAC      MCP4921            MCP4921            DIL08        dviiid         1
+GATE     74HCT32N           74HCT32N           DIL14        dviiid         1
+HAHA!    ATMEGA48/88/168-PU ATMEGA48/88/168-PU DIL28-3      atmega8        1
+ISP      AVR-ISP-6          AVR-ISP-6          AVR-ISP-6    atmel-1        1
+JP1                         PINHD-1X6          1X06         pinhead        1
+JP2                         PINHD-1X3          1X03         pinhead        1
+LED      LED_RGB_7.6MM      LED_RGB_7.6MM      LED_TH_7.6MM dviiid         1
+P0       MCS10B             MCS10B             MCS10B       solpad         1
+P1       MCS10B             MCS10B             MCS10B       solpad         1
+P2       MCS10B             MCS10B             MCS10B       solpad         1
+Q1                          CRYSTALHC49S       HC49/S       crystal        1
+R1       10k                R-US_0204/7        0204/7       rcl            1
+R2       10k                R-US_0204/7        0204/7       rcl            1
+R3       10k                R-US_0204/7        0204/7       rcl            1
+R4       120                R-US_0204/7        0204/7       rcl            1
+R5       10k                R-US_0204/7        0204/7       rcl            1
+R6       10k                R-US_0204/7        0204/7       rcl            1
+R7       120                R-US_0204/7        0204/7       rcl            1
+R8                          R-US_0204/7        0204/7       rcl            1
+R9       100k               R-US_0204/7        0204/7       rcl            1
+R10      120                R-US_0204/7        0204/7       rcl            1
+R11      47                 R-US_0204/7        0204/7       rcl            1
+R12      47                 R-US_0204/7        0204/7       rcl            1
+R13      120                R-US_0204/7        0204/7       rcl            1
+R14      220                R-US_0204/7        0204/7       rcl            1
+R15      390                R-US_0204/7        0204/7       rcl            1
+R16      10k                R-US_0204/7        0204/7       rcl            1
+R17      100k               R-US_0204/7        0204/7       rcl            1
+R18                         TRIM_EU-B64Y       B64Y         pot            1
+R19      10k                R-US_0204/7        0204/7       rcl            1
+R20      10k                R-US_0204/7        0204/7       rcl            1
+RJ45                        557570-1           557570-1     con-amp        1
+RSUP     MCP120TO92-D       MCP120TO92-D       TO92         dviiid         1
+S1                          TAC_SWITCHPTH      TACTILE-PTH  SparkFun       1
+S2                          TAC_SWITCHPTH      TACTILE-PTH  SparkFun       1
+S3                          TAC_SWITCHPTH      TACTILE-PTH  SparkFun       1
+SJ1                         SJ                 SJ           jumper         1
+SJ2                         SJ                 SJ           jumper         1
+SJ3                         SJ                 SJ           jumper         1
+SJ4                         SJ                 SJ           jumper         1
+SJ5                         SJ2W               SJ_2         jumper         1
+SJ6                         SJ                 SJ           jumper         1
+TR485    SN75176BP          SN75176BP          DIP08        dviiid         1
+VREG                        78XXL              78XXL        v-reg          1

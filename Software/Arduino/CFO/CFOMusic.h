@@ -41,10 +41,13 @@ public:
 	void synthInterrupt();
 		
 	// FREQUENCY AND DETUNE FUNCTIONS
-	void setFrequency(float frequency);
-	void setFrequency1(float frequency1);
-	void setFrequency2(float frequency2);
-	void setFrequency3(float frequency3);
+	void setFrequency(float freq);
+	void setFrequency1(float freq);
+	void setFrequency2(float freq);
+	void setFrequency3(float freq);
+	void setSemitone1(int8_t semi);
+	void setSemitone2(int8_t semi);
+	void setSemitone3(int8_t semi);
 	void setDetune(float detune);
 	void setDetune1(float detune);
 	void setDetune2(float detune);
@@ -113,6 +116,9 @@ private:
 	float frequency1;
 	float frequency2;
 	float frequency3;
+	float semi1;
+	float semi2;
+	float semi3;
 	float detune1;
 	float detune2;
 	float detune3;

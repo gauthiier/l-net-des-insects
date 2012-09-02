@@ -21,13 +21,51 @@
  + contact: j.bak@ciid.dk
  */
 
+// MIDI specific constants
+
+#ifndef CFO_MIDI_CHANNEL
+#define CFO_MIDI_CHANNEL 1
+#endif
+
+// SYSEX constants
+#define SYSEX_LIMIT 16
+#define CFO_MANUFACTURER_ID 44
+#define CFO_DEVICE_GROUP_ID 3
+#define SET_CHANNEL 0
+
+
+
 //synth parameters as MIDI controller numbers
-#define ENV_ATTACK 4
-#define ENV_DECAY 5
-#define ENV_SUSTAIN 6
-#define ENV_RELEASE 7
-#define DETUNE 12
-#define WAVEFORM 13
+#define DETUNE 4
+#define WAVEFORM 5
+#define PORTAMENTO 6
+
+#define FREQUENCY1 10
+#define SEMITONE1 11
+#define DETUNE1 12
+#define GAIN1 13
+
+#define FREQUENCY2 20
+#define SEMITONE2 21
+#define DETUNE2 22
+#define GAIN2 23
+
+#define FREQUENCY3 30
+#define SEMITONE3 31
+#define DETUNE3 32
+#define GAIN3 33
+
+#define ENV1_ATTACK 114
+#define ENV1_DECAY 115
+#define ENV1_SUSTAIN 116
+#define ENV1_RELEASE 117
+
+#define ENV2_ATTACK 124
+#define ENV2_DECAY 125
+#define ENV2_SUSTAIN 126
+#define ENV2_RELEASE 127
+
+
 
 // Synth parameters used in MIDI code
 #define ENV_MAX_GAIN (65536 * 4 - 1) 
@@ -37,7 +75,7 @@ class MMidi {
 public:
 	void init();
 	void checkMidi();
-	void setChannel(uint8_t ID, uint8_t channel);
+	void setChannel(uint8_t channel);
 	void setID(uint8_t ID);
 
 	void midiHandler();
@@ -48,6 +86,8 @@ public:
 	void programChange(uint8_t channel, uint8_t number);
 	void channelPressure(uint8_t channel, uint8_t pressure);
 	void pitchWheel(uint8_t channel, uint8_t highBits, uint8_t lowBits);
+	
+	void sysexHandler(uint8_t bytes);
 	void sysex	(uint8_t,
 				 uint8_t,
 				 uint8_t,
@@ -66,14 +106,16 @@ public:
 				 uint8_t);
 
 
+
 private:
 	// ID
 	uint8_t cfoID;
 	
 	// MIDI
 	uint8_t data;
+	bool sysexON;
 	//uint16_t midiBuffer[4];
-	uint8_t midiBuffer[16];
+	uint8_t midiBuffer[SYSEX_LIMIT];
 	uint8_t midiChannel;
 	
 	int midiBufferIndex;
