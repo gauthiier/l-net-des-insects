@@ -1,15 +1,48 @@
-Libraries and sketches for using and running the CFO synth and MIDI library for Arduino.
 
-Work in progress
-
-From the Arduino folder here, copy whole CFO folder to your "libraries" folder in your Arduino sketch folder.
-(on Mac it's typically ~/Documents/Arduino/Libraries/)
-
-See example code in the Arduino/examples folder for utilizing the library.
-
-In order to use MIDI you should use the IACMidi2Serial sketch in the processing folder (To get this to run you need to install Ruin & Wesen's MIDI library for processing. Look for RWMidi here: http://ruinwesen.com/files).
-
-Once the sketch is running you should be able to send note and controller messages from your DAW of choice to the IAC MIDI driver. The IACMidi2Serial sketch only listens to port 1 (the first instance of the IAC driver) but you can modify that in the sketch yourself.
-The sketch then sends that MIDI data (slightly formatted) to the serial port which the (mini)CFO will read and act upon :)
-
-I am not 100% everything will work with the insects yet, but we'll see soon enough.
+                                                                                
+                                                                                
+                                                                                
+      ... +8MMMMMMMMMMMMMMMMMMMMMM=..                                           
+ ..,8ZMMMMMMMMMMMMMMMMMMMMM$ . 7MMMMMMM.                                        
+.DDNNMZ7NMMMMMMMMMMMMMMM  .      .OMMMMMMM$                                     
+.MMDMMMDNMMN88$:, . .              . MMMMMM                             . ?$+   
+ .DMMMMMMMMMMMMMND+..               . .=M$,                        ...ON8Z$7I.. 
+ ..NMMMMMMMMMMMMMMMND8                 ..                       .,ONDDD8OZ$.8   
+   DMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNND88O......        ..78NNDDDD88OZ .8.  
+   .MMMMMMMMMMMMMMMMNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN88I..  .$8MNNDDDDDD88O  .7.  
+    MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMDMMMMNDDDD8=.        
+    MMMMMMMMMMMMMMMMMDI.MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNMMMNDD~.            
+    MMMMMMMMMMMMMMMMMM, .7MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNND7....              
+    MMMMMMMMMMMMMMMMMM.. .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN..   M?               
+    MMMMMMMMMMMMMMMMMM     MMMMMMMMMMMMMMMMMMMMMMMMMMMM$.   .D+ . I.IM~         
+    MMMMNMMMMMMMMMMMNM     ZMMMMMMMMMMMMMMMMMMMMMMMMMMM ,M+M~MNM7MMM~MMM        
+ ...MMMM:MMMMMMMMMMM,M.    .MMMMMMMMMMMMMMMMMMMMMMMMMMM  MM.MMMOM.MO M.M:       
+ ..MMMMM.MM?M8MMMMMM.M.     MMMMMMMMMMMMMMMMMMMMMMMMMM$   ~                     
+   MMMMM.MM.MMMMMMMM.M      M=MMMMMMMMMMMMMMMMMMMMMMMM...       .,    .         
+   M~MMM MM.MM=MMMMMOM,     M=M MMMMMMMMMMMMMMMMMMMMMM..M        .    +         
+  .M~MMM.MM.MM,MMMMMMM,     M+M MMMMMMMMMMMMMMMMMMMMMM+ M .  .      ~,  ..      
+  ZM~MMM.MM.MM,7M:.MMM:     MOM.MMM=ZMMMMMMMMMMMMMMM$NM.MMMM MM MM:MM=MMMMM M   
+  MM~MMM.MO MM,+M. M.M$     MMM?MMM.8MMMZMZMMDMDMM .M M MM.M MMMOM.M, 8MMMM MM. 
+  M=~MMM.M7 MM,=M  MM~M.....MMMDMMM OMMMMM.MNMM~MMM.M.M=         M M. 8M  .MMM  
+  M ~MMM.M7 MM,=M  =M M.....MM:MMMM.8M8MMM.M.MMM? M.M.ZM                     .  
+  M.~MMM.M7 MM:=M  .M M     MM,MMMM.MMOMMM?M MMM .MMM$.M    . .                 
+  M.~MMM,M$ MM7IM   M M.    OM:MMMMOMM=MMMMM MM,  .MNM M:                       
+ =M ~MMMOMD IMMNM=  M O      MMMMMMMOM.MMMMM NM:   NMM MO                       
+  . ~MMOMMM..MMMMM  M:      .MMMMMMMOM.MMMMM MM$    MM  +                       
+    ~MM=MMM..MMMMM  NM       M.MMMM.8M MMMDMMMMM    $M.                         
+    ~MMMMMM  +MMMM. IM       MZMMMM.OM MMM7MM MM     M:                         
+    :M:MMMM   MM?MZ ~M       NMM+MM.IM 8MM$MM.DM     :M                         
+    .M.MMMM   MM MM.~M       =MM7MM :M..MM.MM 8M.    .M,                        
+     .  8MM.  .M M  ~M       .MMMIMO M  MM $M OMI     7M                        
+        ,M,.   M:MI ~M       .MMM.DM M. MM ,M $M7                               
+         M.    MNOM.,.        NMM  M M. OM  M =M                                
+        .M,    .M.M           MMN   .M: :M  M ~M                                
+                M .           MM.    M+ .M  MM ?                                
+                M:             M    .M$ .M. .M:                                 
+                M=             M     7M  M?                                     
+                M8                       NM                                     
+                ,.                        M.                                    
+                                                                                
+                                                                                
+                                                                                
+       
